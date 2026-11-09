@@ -103,6 +103,38 @@
 
   var lb = document.getElementById('lightbox');
   function closeLB() { if (lb) lb.hidden = true; }
+  /* ---------- giriş penceresi: oturum başına bir kez */
+  (function () {
+    var KEY = 'oop:dua';
+    try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+    var wrap = document.createElement('div');
+    wrap.className = 'dua';
+    wrap.innerHTML =
+      '<div class="dua-card" role="dialog" aria-modal="true" aria-labelledby="duaT">' +
+        '<div class="dua-ic" aria-hidden="true">🤲</div>' +
+        '<h2 id="duaT">O kadar giriyorsunuz bi dua edin bari :D</h2>' +
+        '<p class="dua-msg">İnşallah bu siteye katkısı olan herkes sınavı geçer.</p>' +
+        '<button type="button" class="dua-btn">Amin</button>' +
+      '</div>';
+    document.body.appendChild(wrap);
+    document.documentElement.classList.add('dua-open');
+    var btn = wrap.querySelector('.dua-btn');
+    function close() {
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+      wrap.classList.add('out');
+      document.documentElement.classList.remove('dua-open');
+      setTimeout(function () { wrap.remove(); }, 220);
+      document.removeEventListener('keydown', onKey, true);
+    }
+    function onKey(e) {
+      if (e.key === 'Escape' || e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); close(); }
+      else if (e.key === 'Tab') { e.preventDefault(); btn.focus(); }
+    }
+    btn.addEventListener('click', close);
+    document.addEventListener('keydown', onKey, true);
+    requestAnimationFrame(function () { btn.focus({ preventScroll: true }); });
+  })();
+
   if (!isDoc) return;
 
   /* ---------- okuma çubuğu ve kaldığın yer */
@@ -316,4 +348,5 @@
     input.addEventListener('input', update);
     update();
   });
+
 })();
