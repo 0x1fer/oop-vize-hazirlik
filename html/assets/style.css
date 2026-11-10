@@ -125,7 +125,10 @@ button { font: inherit; color: inherit; }
   overflow: auto; padding: 28px 14px 40px 20px;
 }
 .toc-head { display: grid; gap: 8px; padding: 14px; margin-bottom: 14px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--border); }
-.toc-head > span:first-child { font: 700 14px/1.2 var(--f-head); color: var(--text); }
+.toc-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.toc-top > span { font: 700 14px/1.2 var(--f-head); color: var(--text); }
+.toc-hide { display: inline-grid; place-items: center; width: 28px; height: 28px; margin: -6px -6px -6px 0; padding: 0; border: 1px solid transparent; border-radius: 8px; background: none; color: var(--text-3); cursor: pointer; transition: color .15s, background .15s, border-color .15s; }
+.toc-hide:hover { color: var(--text); background: var(--surface-2); border-color: var(--border); }
 .toc-prog { font-size: 12.5px; color: var(--text-3); }
 .toc-prog b { color: var(--green); font-weight: 600; }
 .meter { display: block; height: 6px; border-radius: 6px; background: var(--surface-3); overflow: hidden; }
@@ -460,4 +463,13 @@ html:not([data-lang="tr"]) .lang-btn [data-l="en"], html[data-lang="tr"] .lang-b
 }
 @media (max-width: 440px) {
   .doc .brand { font-size: 0; gap: 0; }   /* dar ekranda yalnızca logo; düğmeler sığsın */
+}
+
+/* ---------- içindekiler gizlenebilir (geniş ekran) */
+@media (min-width: 981px) {
+  .tb-btn.menu { display: inline-flex; }
+  html.toc-hidden .layout { grid-template-columns: minmax(0, 1fr); max-width: 1100px; }
+  html.toc-hidden .toc { display: none; }
+  html.toc-hidden .doc-hero, html.toc-hidden .prose, html.toc-hidden .pager { margin-left: auto; margin-right: auto; }
+  html:not(.toc-hidden) .tb-btn.menu { color: var(--text); border-color: var(--border-2); }
 }

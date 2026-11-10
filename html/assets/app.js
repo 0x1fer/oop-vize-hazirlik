@@ -184,8 +184,24 @@
   onScroll();
 
   /* ---------- içindekiler (dar ekranda çekmece) */
-  var menuBtn = document.getElementById('menuBtn');
-  if (menuBtn) menuBtn.addEventListener('click', function () { body.classList.toggle('toc-open'); });
+  var menuBtn = document.getElementById('menuBtn'), tocHide = document.getElementById('tocHide');
+  var wide = matchMedia('(min-width: 981px)');
+  /* geniş ekranda içindekiler kenar sütunu gizlenir/gösterilir (tercih saklanır); dar ekranda çekmece açılır/kapanır */
+  function setTocHidden(h) {
+    document.documentElement.classList.toggle('toc-hidden', h);
+    try { localStorage.setItem('oop:toc', h ? 'hidden' : 'shown'); } catch (e) {}
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', String(!h));
+  }
+  if (menuBtn) {
+    menuBtn.setAttribute('aria-expanded', String(!document.documentElement.classList.contains('toc-hidden')));
+    menuBtn.addEventListener('click', function () {
+      if (wide.matches) setTocHidden(!document.documentElement.classList.contains('toc-hidden'));
+      else body.classList.toggle('toc-open');
+    });
+  }
+  if (tocHide) tocHide.addEventListener('click', function () {
+    if (wide.matches) setTocHidden(true); else body.classList.remove('toc-open');
+  });
   document.getElementById('toc').addEventListener('click', function (e) { if (e.target.closest('a')) body.classList.remove('toc-open'); });
 
   /* ---------- "çalıştım" işaretleri */
