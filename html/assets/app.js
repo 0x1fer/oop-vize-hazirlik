@@ -109,7 +109,7 @@
     var setLang = function (l) {
       document.documentElement.dataset.lang = l;
       try { localStorage.setItem('oop:lang', l); } catch (e) {}
-      langBtn.setAttribute('aria-label', l === 'tr' ? 'İngilizce çözümleri göster' : 'Türkçe çözümleri göster');
+      langBtn.setAttribute('aria-label', l === 'tr' ? 'İngilizcesini göster' : 'Türkçesini göster');
     };
     setLang(document.documentElement.dataset.lang === 'tr' ? 'tr' : 'en');
     langBtn.addEventListener('click', function () {
