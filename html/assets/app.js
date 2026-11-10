@@ -103,6 +103,20 @@
 
   var lb = document.getElementById('lightbox');
   function closeLB() { if (lb) lb.hidden = true; }
+  /* ---------- çözüm dili: EN (sınavda yazılacak) / TR (Türkçesi) */
+  var langBtn = document.getElementById('langBtn');
+  if (langBtn) {
+    var setLang = function (l) {
+      document.documentElement.dataset.lang = l;
+      try { localStorage.setItem('oop:lang', l); } catch (e) {}
+      langBtn.setAttribute('aria-label', l === 'tr' ? 'İngilizce çözümleri göster' : 'Türkçe çözümleri göster');
+    };
+    setLang(document.documentElement.dataset.lang === 'tr' ? 'tr' : 'en');
+    langBtn.addEventListener('click', function () {
+      setLang(document.documentElement.dataset.lang === 'tr' ? 'en' : 'tr');
+    });
+  }
+
   /* ---------- giriş penceresi: oturum başına bir kez */
   (function () {
     var KEY = 'oop:dua';

@@ -444,3 +444,20 @@ html.dua-open { overflow: hidden; }
 @keyframes duaFadeOut { to { opacity: 0; } }
 @keyframes duaPop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .dua, .dua.out, .dua-card { animation: none; } }
+
+/* ---------- çözüm dili (EN / TR) */
+.lang-tr { display: none; }
+html[data-lang="tr"] .lang-en { display: none; }
+html[data-lang="tr"] span.lang-tr { display: inline; }
+html[data-lang="tr"] div.lang-tr { display: block; }
+.lang-btn { gap: 0; padding: 3px; font: 700 .78rem/1 Inter, system-ui, sans-serif; letter-spacing: .02em; }
+.lang-btn span { padding: 6px 9px; border-radius: 7px; color: var(--text-3); transition: background .15s, color .15s; }
+html:not([data-lang="tr"]) .lang-btn [data-l="en"], html[data-lang="tr"] .lang-btn [data-l="tr"] {
+  background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--text); }
+@media (max-width: 620px) {
+  .tb-actions { gap: 6px; }
+  .lang-btn span { padding: 6px 7px; }
+}
+@media (max-width: 440px) {
+  .doc .brand { font-size: 0; gap: 0; }   /* dar ekranda yalnızca logo; düğmeler sığsın */
+}
