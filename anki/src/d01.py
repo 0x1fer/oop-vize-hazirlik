@@ -1,0 +1,231 @@
+"""Konu 1: Yazılım mühendisliğinin kapsamı (Chapter 1) ve etik."""
+from ortak import en, ipucu, ol, ul
+
+DESTE = "01 Kapsam, Bakım ve Etik"
+
+KARTLAR = [
+    # --- Tarihsel boyut ---
+    ("<b>Software crisis</b> nedir? Üç belirtisi?",
+     "Yazılımın:\n" + ol("<b>geç</b> teslim edilmesi (late)", "<b>bütçeyi aşması</b> (over budget)",
+                         "içinde <b>kalıntı hatalar</b> olması (with residual faults)")
+     + en("Software is delivered late, over budget and with residual faults."),
+     "tanim cikmis"),
+    ("\"Software engineering\" terimi nerede ve hangi amaçla ortaya atıldı?",
+     "<b>1968 NATO Konferansı</b>, Garmisch (Almanya). Amaç: <b>software crisis</b>'i çözmek.",
+     "tanim"),
+    ("Standish Group 2006 verisine göre projelerin yüzde kaçı başarılı, kaçı \"challenged\", kaçı iptal?",
+     "%35 başarılı, %46 challenged (geç / bütçe üstü / eksik özellik), %19 iptal ya da hiç kullanılmadı.\n"
+     "Yani \"üç projeden ancak biri başarılı\". Kriz çözülmedi: <b>software depression</b>.",
+     "sayi"),
+
+    # --- Ekonomik boyut ---
+    ("Yeni kodlama yöntemi CM<sub>new</sub>, eskisinden %10 hızlı. Yazılım mühendisi \"hemen geçelim\" der mi? Neye bakar?",
+     "Hayır, önce şunlar düşünülür:\n"
+     + ol("Personelin <b>eğitim maliyeti</b>", "Yeni teknolojiye geçişin <b>etkisi</b> (yeni araç, ek personel, düzenin bozulması)",
+          "Yöntemin <b>bakıma etkisi</b>")
+     + "Kodlama + birim testi toplam maliyetin sadece ≈ %8,5'i → kazanç en fazla %0,85. <b>Asıl kazanç bakımdadır.</b>",
+     "kavram"),
+    ("Bakım maliyetini %10 düşüren bir teknik toplam maliyeti ne kadar düşürür? Kodlamayı %10 hızlandıran?",
+     "Bakım ≈ %75 → 0,10 × 75 = <b>%7,5</b> düşüş.\nKodlama+birim test ≈ %8,5 → en fazla <b>%0,85</b>.\n"
+     "Sonuç: yatırım bakımı kolaylaştıran tekniklere yapılmalı.",
+     "sayi"),
+
+    # --- Yaşam döngüsü ---
+    ("<b>Life-cycle model</b> ile <b>life cycle</b> farkı?",
+     "<b>Life-cycle model:</b> yazılım geliştirirken izlenecek adımların teorik tarifi (\"ne yapılmalı\").\n"
+     "<b>Life cycle:</b> belirli bir ürün için <i>gerçekte</i> uygulanan adımlar.",
+     "tanim karsilastirma"),
+    ("Klasik (waterfall) modelin fazlarını sırayla yaz.",
+     ol("Requirements", "Analysis (specification)", "Design", "Implementation",
+        "Postdelivery maintenance", "Retirement")
+     + ipucu("Planning, testing ve documentation AYRI faz değildir."),
+     "liste cikmis"),
+    ("Klasik modelde <b>analysis (specification)</b> fazında ne yapılır? Hangi soruyu cevaplar?",
+     "Gereksinimler analiz edilir, <b>specification document</b> ve <b>SPMP</b> hazırlanır.\nSoru: Ürün <b>ne</b> yapacak?",
+     "kavram"),
+    ("Klasik modelde <b>design</b> fazının iki adımı? Hangi soruyu cevaplar?",
+     ol("<b>Architectural design:</b> ürünü modüllere ayırma", "<b>Detailed design:</b> her modülün veri yapıları ve algoritmaları")
+     + "Soru: Ürün bunu <b>nasıl</b> yapacak?",
+     "kavram"),
+
+    # --- Bakım türleri ---
+    ("Üç bakım türü nedir? (çıkmış test sorusu)",
+     ol("<b>Corrective</b> (düzeltici)", "<b>Perfective</b> (mükemmelleştirici)", "<b>Adaptive</b> (uyarlayıcı)")
+     + "\"Reliable\" bir bakım türü <b>değildir</b>.",
+     "liste cikmis test"),
+    ("<b>Corrective maintenance</b> nedir? Örnek?",
+     "Kalıntı hataların (residual faults) giderilmesi; spesifikasyon değişmez (<i>software repair</i>).\nÖrnek: faiz yanlış hesaplanıyor, düzeltilir.",
+     "tanim"),
+    ("<b>Perfective maintenance</b> nedir? Örnek?",
+     "Müşterinin ürünün etkinliğini artıracağını düşündüğü değişiklikler: yeni işlev, daha kısa yanıt süresi.\nÖrnek: rapora yeni sütun eklemek, sistemi hızlandırmak.",
+     "tanim"),
+    ("<b>Adaptive maintenance</b> nedir? Örnek?",
+     "Ürünün çalıştığı <b>ortam</b> değişince yapılan değişiklikler: yeni donanım/işletim sistemi, yeni yasal düzenleme.\n"
+     "Örnek: KDV oranı değişti; Teal Tractors'ta Kanada vergisi ve CAD para birimi.",
+     "tanim"),
+    ("Hangi iki bakım türüne birlikte <b>enhancement</b> (software update) denir?",
+     "<b>Perfective + adaptive</b>.",
+     "tanim"),
+    ("Senaryo: Yeni çıkan vergi yasası yüzünden faturalama modülü değiştiriliyor. Bakım türü?",
+     "<b>Adaptive</b> — ürünün ortamı (yasal düzenleme) değişti.",
+     "senaryo"),
+    ("Senaryo: Müşteri, rapor ekranına \"PDF olarak indir\" düğmesi istiyor. Bakım türü?",
+     "<b>Perfective</b> — yeni işlev / ürünün etkinliğini artırma.",
+     "senaryo"),
+    ("Senaryo: Kullanıcı, toplam tutarın yanlış hesaplandığını bildiriyor ve hata düzeltiliyor. Bakım türü?",
+     "<b>Corrective</b> — kalıntı hata gideriliyor, spesifikasyon değişmiyor.",
+     "senaryo"),
+
+    # --- Klasik / modern bakım ---
+    ("Bakımın <b>klasik</b> tanımı nedir? Neden \"temporal\" denir?",
+     "<b>Development-then-maintenance</b> modeli: ürün kurulduktan sonra yapılan her değişiklik bakımdır.\n"
+     "Temporal: bir etkinliğin bakım mı geliştirme mi olduğu <i>ne zaman yapıldığına</i> bağlıdır.",
+     "tanim karsilastirma"),
+    ("Klasik bakım tanımının iki saçma sonucu nedir?",
+     ol("Aynı hata kurulumdan <b>1 gün sonra</b> düzeltilirse bakım, <b>1 gün önce</b> düzeltilirse geliştirme sayılır.",
+        "Müşteri işlevi kurulumdan sonra isterse perfective bakım, hemen önce isterse (moving target) geliştirme sayılır.")
+     + "Ayrıca günümüzde sıfırdan geliştirme nadir, <b>reuse</b> yaygın.",
+     "kavram"),
+    ("<b>Modern maintenance</b> nedir? (çıkmış test sorusu)",
+     "ISO/IEC 12207 (1995): bakım, yazılım bir problem nedeniyle ya da iyileştirme/uyarlama ihtiyacıyla değiştirildiğinde gerçekleşir.\n"
+     "<b>Maintenance occurs whenever software is modified</b> — kurulumdan önce ya da sonra fark etmez. <b>Operational</b> tanımdır."
+     + en("Modern maintenance is an operational definition: maintenance occurs whenever software is modified because of a problem "
+          "or a need for improvement or adaptation, regardless of whether it takes place before or after installation."),
+     "tanim cikmis test"),
+    ("<b>Postdelivery maintenance</b> nedir?",
+     "Ürün teslim edilip kurulduktan <b>sonra</b> yapılan değişiklikler (IEEE 1990).",
+     "tanim"),
+    ("Toplam yazılım maliyetinin ne kadarı postdelivery maintenance'a gider?",
+     "1976–81: ≈ <b>%67</b>; 1992–98: ≈ <b>%75</b> (birçok kurumda %70–80).",
+     "sayi"),
+    ("İyi yazılım ile kötü yazılımın kaderi farkı? (bakımın önemi)",
+     "Kötü yazılım atılır; <b>iyi yazılım 10–20 yıl bakımla yaşar</b>. Yazılım sürekli değişen gerçek dünyanın modelidir.",
+     "kavram"),
+
+    # --- Erken hata ---
+    ("Hatayı erken bulmak neden önemli? Gereksinim hatası bakımda kaç kat pahalı?",
+     "Ne kadar erken bulunursa o kadar ucuz: gereksinim hatasını bakımda düzeltmek ≈ <b>100–200 kat</b> pahalı (Boehm).\n"
+     "Erken: sadece bir <b>doküman</b> değişir. Geç: kod + doküman değişir, değişiklik test edilir, <b>regression testing</b>, yeniden kurulum.",
+     "kavram"),
+    ("Büyük projelerde hataların yüzde kaçı requirements/analysis/design kaynaklı?",
+     "<b>%60–70</b>. JPL: spesifikasyonda sayfa başına 1,9; tasarımda 0,9; kodda 0,3 hata.",
+     "sayi"),
+    ("Takım çalışmasının iki temel sorunu?",
+     ol("Modüller arası <b>arayüz (interfacing)</b> problemleri", "Takım üyeleri arası <b>iletişim</b> problemleri"),
+     "liste"),
+
+    # --- Ayrı faz olmayanlar ---
+    ("Hangi üç etkinlik <b>ayrı bir faz değildir</b>?",
+     ol("<b>Planning</b>", "<b>Testing</b>", "<b>Documentation</b>") + "Üçü de bütün yaşam döngüsü boyunca sürer.",
+     "liste cikmis"),
+    ("Which one is NOT a separate phase during software development?\na) Implementation b) Analysis c) Design d) Documentation e) Requirement",
+     "<b>d) Documentation</b> — diğer bütün etkinliklerle paralel yürütülür.",
+     "cikmis test"),
+    ("Neden ayrı bir <b>planning</b> fazı yok?",
+     "Projenin başında neyin yapılacağını tam bilmediğimiz için baştan tam plan yapılamaz. Başta ön plan yapılır; "
+     "SPMP ancak spesifikasyon onaylandıktan (signed off) sonra hazırlanır. <b>Planlama bütün yaşam döngüsü boyunca yapılır.</b>",
+     "kavram"),
+    ("Neden ayrı bir <b>testing</b> fazı yok?",
+     "Geliştirme bitince test etmek çok geçtir. Verification (her faz sonu) geç, validation (proje sonu) çok geç. "
+     "Test sürekli yapılmalı; sorumlusu her yazılımcı ve <b>SQA</b> grubudur.",
+     "kavram"),
+    ("Neden ayrı bir <b>documentation</b> fazı yok?",
+     "Sonradan yazmak çok geç: kilit kişiler ayrılabilir; önceki fazın belgesi olmadan sonraki faz yapılamaz; "
+     "belge olmadan test ve bakım yapılamaz. Dokümantasyon <b>bütün etkinliklerle paralel</b> yürür, hep güncel olmalıdır.",
+     "kavram"),
+    ("<b>Verification</b> ile <b>validation</b> farkı?",
+     "<b>Verification:</b> her fazın sonunda yapılan test — \"ürünü doğru mu yapıyoruz?\"\n"
+     "<b>Validation:</b> projenin sonunda ürünün spesifikasyonu karşılayıp karşılamadığının testi — \"doğru ürünü mü yaptık?\"",
+     "tanim karsilastirma cikmis"),
+
+    # --- Nesne yönelimli paradigma ---
+    ("Yapısal (classical) paradigma neden yetersiz kaldı?",
+     "<b>50.000 satırdan büyük</b> ürünlerde başarısız oldu, bakım eforun %70–80'ine çıktı. Yöntemler ya <b>action oriented</b> "
+     "(DFD, sonlu durum makinesi) ya <b>data oriented</b> (ER, Jackson) idi; <b>ikisi birden değil</b>.",
+     "kavram"),
+    ("<b>Object</b> (nesne) nedir? Banka hesabı örneği?",
+     "Hem <b>veriyi</b> hem o veri üzerinde yapılan <b>eylemleri</b> içeren yazılım bileşeni.\n"
+     "Banka hesabı: veri <i>accountBalance</i>; eylemler <i>deposit, withdraw, determineBalance</i>. Bakiye gizli, sadece bu metotlarla erişilir."
+     + en("An object is a software component that incorporates both data and the actions performed on that data."),
+     "tanim"),
+    ("Nesne yönelimli paradigmanın 5 güçlü yanı?",
+     ol("<b>Information hiding</b> → bakım güvenli, regression fault azalır",
+        "Geliştirme kolay: nesnelerin fiziksel karşılıkları var",
+        "İyi tasarlanmış nesneler <b>bağımsız birimler</b> (encapsulation, mesajlaşma, responsibility-driven design)",
+        "<b>Karmaşıklığı azaltır</b> (bağımsız birimler)", "<b>Reuse</b>'u destekler"),
+     "liste"),
+    ("<b>Responsibility-driven design</b> (design by contract) nedir? Hocanın örneği?",
+     "Bir nesneye, işi <b>nasıl</b> yaptığını bilmeden mesaj göndermek; işi yapmak nesnenin <b>sorumluluğudur</b>.\n"
+     "Örnek: başka şehirdeki annene çiçek göndermek için çiçek sitesini ararsın; hangi çiçekçinin teslim edeceğini bilmen gerekmez.",
+     "tanim"),
+    ("Analiz/tasarım \"tümseği\" (hump / jolt) nedir? OO paradigma bunu nasıl çözer?",
+     "Yapısal paradigmada analiz (ne) → tasarım (nasıl) geçişinde sert bir sıçrama vardır; modüller ancak mimari tasarımda çıkar.\n"
+     "OO'da nesneler <b>analiz</b> iş akışında çıkar, tasarımda tasarlanır, kodlamada kodlanır → geçişler yumuşar.",
+     "kavram"),
+    ("<b>Encapsulation</b> ile <b>information hiding</b> farkı?",
+     "<b>Encapsulation:</b> gerçek dünyadaki bir varlıkla ilgili her şeyin (veri + eylem) tek birimde toplanması.\n"
+     "<b>Information hiding:</b> gerçekleştirme ayrıntılarının gizlenmesi; diğer modüller onlara bağımlı olamaz, değişiklik yerel kalır.",
+     "tanim karsilastirma"),
+
+    # --- Terminoloji ---
+    ("<b>Mistake → fault → failure → error</b> zincirini açıkla.",
+     ol("<b>Mistake:</b> programcının yaptığı yanlışlık", "<b>Fault:</b> bunun koda giren sonucu (hata)",
+        "<b>Failure:</b> hatanın yol açtığı, gözlenen yanlış davranış",
+        "<b>Error:</b> sonucun <i>ne kadar yanlış olduğunun ölçüsü</i> (IEEE 610.12, nicel tanım)")
+     + "<b>Defect:</b> fault/failure/error için genel terim. \"Bug\" sorumluluğu atar.",
+     "tanim liste"),
+    ("<b>Internal</b> ile <b>contract software</b> farkı?",
+     "<b>Internal:</b> müşteri ve geliştirici aynı kurumda.\n<b>Contract:</b> müşteri ve geliştirici farklı kurumlarda.",
+     "tanim karsilastirma"),
+    ("<b>COTS</b> ne demek?",
+     "<b>Commercial off-the-shelf</b>: raftan satılan hazır paket ticari yazılım.",
+     "tanim"),
+    ("Open-source yazılımla ilgili <b>Linus's Law</b> nedir?",
+     "\"Yeterince göz varsa bütün hatalar sığdır.\" (Given enough eyeballs, all bugs are shallow.)",
+     "tanim"),
+    ("<b>Program / system / product</b> farkı?",
+     "Program: kod parçası. System: birlikte çalışan programlar. Product: bunların tamamı + belgeleri.",
+     "tanim"),
+
+    # --- Etik ---
+    ("Software Engineering Code of Ethics'i kim yayımladı? Kaç ilke?",
+     "<b>ACM ve IEEE-CS</b> ortak (sürüm 5.2, 1999). Preamble + <b>8 ilke</b>."
+     + ipucu("Hoca: \"I ask this code of ethics in the exam\"."),
+     "hoca_sorar"),
+    ("Code of Ethics'in <b>8 ilkesini</b> sırayla yaz.",
+     ol("Public", "Client and Employer", "Product", "Judgment", "Management", "Profession", "Colleagues", "Self")
+     + ipucu("Dışarıdan içeriye: toplum → müşteri → ürün → yargın → yönetim → meslek → meslektaş → kendin."),
+     "liste hoca_sorar ezber"),
+    ("Etik ilke 1: <b>Public</b>",
+     "Software engineers shall act consistently with the <b>public interest</b>.\n(Kamu yararına uygun davran.)",
+     "etik"),
+    ("Etik ilke 2: <b>Client and Employer</b>",
+     "…act in a manner that is in the best interests of their <b>client and employer</b>, consistent with the public interest.\n"
+     "(Kamu yararıyla çelişmeden müşteri ve işverenin çıkarını gözet.)",
+     "etik"),
+    ("Etik ilke 3: <b>Product</b>",
+     "…ensure that their products and related modifications meet the <b>highest professional standards</b> possible.",
+     "etik"),
+    ("Etik ilke 4: <b>Judgment</b>",
+     "…maintain <b>integrity and independence</b> in their professional judgment.\n(Mesleki yargıda dürüstlük ve bağımsızlık.)",
+     "etik"),
+    ("Etik ilke 5: <b>Management</b>",
+     "Software engineering <b>managers and leaders</b> shall subscribe to and promote an ethical approach to the management "
+     "of software development and maintenance.",
+     "etik"),
+    ("Etik ilke 6: <b>Profession</b>",
+     "…advance the <b>integrity and reputation of the profession</b> consistent with the public interest.",
+     "etik"),
+    ("Etik ilke 7: <b>Colleagues</b>",
+     "…be <b>fair to and supportive of</b> their colleagues.",
+     "etik"),
+    ("Etik ilke 8: <b>Self</b>",
+     "…participate in <b>lifelong learning</b> regarding the practice of their profession and promote an ethical approach.",
+     "etik"),
+    ("Hangi etik ilke \"lifelong learning\"i söyler? Hangisi \"integrity and independence\"ı?",
+     "Lifelong learning → <b>8. Self</b>.\nIntegrity and independence in judgment → <b>4. Judgment</b>.",
+     "etik"),
+    ("Yazılım geliştiren/bakan kişilerin taşıması gereken özellikler (kitap)?",
+     "Hard working, intelligent, sensible, up to date ve her şeyden önce <b>ethical</b>.",
+     "liste"),
+]

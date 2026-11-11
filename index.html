@@ -6,7 +6,7 @@
 <title>OOP Vize Hazırlık</title>
 <script>var t='dark',l='en';try{t=localStorage.getItem('oop:theme')||'dark';l=localStorage.getItem('oop:lang')||'en';}catch(e){}document.documentElement.dataset.theme=t;document.documentElement.dataset.lang=l;try{if(localStorage.getItem('oop:toc')==='hidden')document.documentElement.classList.add('toc-hidden');}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="html/assets/style.css?v=e699d26c">
+<link rel="stylesheet" href="html/assets/style.css?v=b61c9efa">
 <style>
   .home-top { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
   .hero { position: relative; isolation: isolate; padding: 76px 0 44px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); gap: 40px 56px; align-items: end; }
@@ -90,6 +90,32 @@
   .card.wide p { flex: 1; }
   .card.wide .prog { width: 220px; }
 
+  .fc-home { display: grid; gap: 12px; margin-bottom: 56px; }
+  .fc-home-main {
+    position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 18px; align-items: center;
+    padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); color: var(--text); text-decoration: none;
+    transition: transform .2s ease, border-color .2s, box-shadow .2s;
+  }
+  .fc-home-main::before { content: ""; position: absolute; z-index: -1; inset: -60% auto auto -10%; width: 420px; height: 260px; background: radial-gradient(closest-side, color-mix(in srgb, #A78BFA 30%, transparent), transparent); }
+  .fc-home-main:hover { transform: translateY(-3px); border-color: color-mix(in srgb, #A78BFA 55%, var(--border)); box-shadow: 0 20px 40px -24px color-mix(in srgb, #A78BFA 70%, transparent); }
+  .fc-home-main .badge { font-size: 22px; }
+  .fc-home-t b { display: block; font: 700 1.25rem/1.25 var(--f-head); letter-spacing: -.015em; }
+  .fc-home-t em { font-style: normal; color: var(--text-2); font-size: 14.5px; line-height: 1.5; }
+  .fc-home-n { text-align: right; }
+  .fc-home-n b { display: block; font: 800 1.9rem/1 var(--f-head); color: #A78BFA; }
+  .fc-home-n small { color: var(--text-3); font-size: 12.5px; }
+  .fc-home-main .go { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: color-mix(in srgb, #A78BFA 20%, transparent); color: #A78BFA; font-size: 18px; }
+  .fc-home-decks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fc-home-decks a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); text-decoration: none; font-size: 13.5px; font-weight: 500; }
+  .fc-home-decks a:hover { color: var(--text); border-color: var(--hue); }
+  .fc-home-decks i { width: 8px; height: 8px; border-radius: 50%; background: var(--hue); }
+  .fc-home-decks small { font: 600 11.5px var(--f-mono); color: var(--text-3); }
+  @media (max-width: 600px) {
+    .fc-home-main { grid-template-columns: auto minmax(0, 1fr); padding: 18px; gap: 14px; }
+    .fc-home-main .go { display: none; }
+    .fc-home-n { grid-column: 2; text-align: left; display: flex; align-items: baseline; gap: 8px; }
+  }
+
   .lower { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin: 0 0 60px; }
   .panel { padding: 24px 26px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
   .panel h2 { margin: 0 0 4px; font: 800 1.35rem/1.2 var(--f-head); letter-spacing: -.015em; }
@@ -147,6 +173,17 @@
 
   <div class="sec-h"><h2>Sınav arşivi</h2><p>sorular, çözümler ve analiz</p></div>
   <section class="grid sinav" id="gSinav"></section>
+
+  <div class="sec-h"><h2>Flashcard'lar</h2><p>Anki gibi aralıklı tekrar, her konu ayrı deste</p></div>
+  <section class="fc-home" id="fcHome">
+    <a class="fc-home-main" href="html/kartlar.html">
+      <span class="badge" style="--hue:#A78BFA" aria-hidden="true">⟳</span>
+      <span class="fc-home-t"><b>Kartlarla çalış</b><em id="fcHomeTxt">Soruyu gör, cevabı aklından söyle, kendini puanla. Bilemediklerin sık, bildiklerin seyrek gelir.</em></span>
+      <span class="fc-home-n" id="fcHomeN" hidden><b></b><small>bugün</small></span>
+      <span class="go">›</span>
+    </a>
+    <div class="fc-home-decks" id="fcHomeDecks"></div>
+  </section>
 
   <div class="sec-h"><h2>Konu anlatımı</h2><p>dersteki sırayla</p></div>
   <section class="grid konu" id="gKonu"></section>
@@ -253,6 +290,20 @@
     r.querySelector('b').textContent = last.l;
     r.querySelector('em').textContent = (last.t ? last.t + ', ' : '') + 'sayfanın %' + (last.pct || 0) + '\'i okundu';
     r.hidden = false;
+  }
+  var DESTELER = [{"id": "d01", "no": "1", "ad": "Kapsam, Bakım ve Etik", "renk": "#60A5FA", "n": 55}, {"id": "d02", "no": "2", "ad": "Yaşam Döngüsü ve Stable Intermediate Forms", "renk": "#C084FC", "n": 35}, {"id": "d03", "no": "3", "ad": "Unified Process ve SPMP", "renk": "#F472B6", "n": 49}, {"id": "d04", "no": "4", "ad": "Cohesion ve Coupling", "renk": "#2DD4BF", "n": 66}, {"id": "d05", "no": "5", "ad": "ISO 25010", "renk": "#FBBF24", "n": 122}, {"id": "d06", "no": "6", "ad": "Gereksinimler ve Use Case", "renk": "#22D3EE", "n": 46}, {"id": "d07", "no": "7", "ad": "Nesne Yönelimli Analiz", "renk": "#FB923C", "n": 47}, {"id": "d08", "no": "8", "ad": "UML Diyagramları", "renk": "#818CF8", "n": 62}];
+  document.getElementById('fcHomeDecks').innerHTML = DESTELER.map(function (d) {
+    return '<a href="html/kartlar.html#' + d.id + '" style="--hue:' + d.renk + '"><i></i>' + esc(d.no) + '. ' + esc(d.ad) + ' <small>' + d.n + '</small></a>';
+  }).join('');
+  var fc = S.get('fc:ozet', null), fcToplam = DESTELER.reduce(function (t, d) { return t + d.n; }, 0);
+  if (fc && fc.goruldu) {
+    var bekleyen = fc.yeni + fc.ogren + fc.tekrar;
+    document.getElementById('fcHomeTxt').textContent = fcToplam + ' karttan ' + fc.goruldu + ' tanesini gördün. ' +
+      (fc.tekrar || fc.ogren ? (fc.tekrar + fc.ogren) + ' kartın tekrar zamanı geldi.' : 'Tekrar bekleyen kart yok.');
+    var n = document.getElementById('fcHomeN');
+    n.querySelector('b').textContent = bekleyen; n.hidden = false;
+  } else {
+    document.getElementById('fcHomeTxt').textContent = DESTELER.length + ' deste, ' + fcToplam + ' kart. Soruyu gör, cevabı aklından söyle, kendini puanla; bilemediklerin sık, bildiklerin seyrek gelir.';
   }
   document.getElementById('heroSearch').addEventListener('click', function () { window.BZOpenSearch(); });
   document.getElementById('resetBtn').addEventListener('click', function () {

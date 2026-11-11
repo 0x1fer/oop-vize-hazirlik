@@ -1,0 +1,127 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#deck:OOP Vize::05 ISO 25010
+#tags column:3
+<b>Functional Suitability</b><br>Alt karakteristikleri nelerdir? (3)	1. Functional completeness<br>2. Functional correctness<br>3. Functional appropriateness	karakteristik->alt
+<b>Performance Efficiency</b><br>Alt karakteristikleri nelerdir? (3)	1. Time behaviour<br>2. Resource utilization<br>3. Capacity	karakteristik->alt
+<b>Compatibility</b><br>Alt karakteristikleri nelerdir? (2)	1. Co-existence<br>2. Interoperability	karakteristik->alt
+<b>Interaction Capability</b><br>Alt karakteristikleri nelerdir? (8)	1. Appropriateness recognizability<br>2. Learnability<br>3. Operability<br>4. User error protection<br>5. User engagement<br>6. Inclusivity<br>7. User assistance<br>8. Self-descriptiveness	karakteristik->alt
+<b>Reliability</b><br>Alt karakteristikleri nelerdir? (4)	1. Faultlessness<br>2. Availability<br>3. Fault tolerance<br>4. Recoverability	karakteristik->alt
+<b>Security</b><br>Alt karakteristikleri nelerdir? (6)	1. Confidentiality<br>2. Integrity<br>3. Non-repudiation<br>4. Accountability<br>5. Authenticity<br>6. Resistance	karakteristik->alt
+<b>Maintainability</b><br>Alt karakteristikleri nelerdir? (5)	1. Modularity<br>2. Reusability<br>3. Analysability<br>4. Modifiability<br>5. Testability	karakteristik->alt
+<b>Flexibility</b><br>Alt karakteristikleri nelerdir? (4)	1. Adaptability<br>2. Scalability<br>3. Installability<br>4. Replaceability	karakteristik->alt
+<b>Safety</b><br>Alt karakteristikleri nelerdir? (5)	1. Operational constraint<br>2. Risk identification<br>3. Fail safe<br>4. Hazard warning<br>5. Safe integration	karakteristik->alt
+<b>Functional completeness</b><br>Hangi karakteristiğe aittir?	1. Functional Suitability	alt->karakteristik
+<b>Functional correctness</b><br>Hangi karakteristiğe aittir?	1. Functional Suitability	alt->karakteristik
+<b>Functional appropriateness</b><br>Hangi karakteristiğe aittir?	1. Functional Suitability	alt->karakteristik
+<b>Time behaviour</b><br>Hangi karakteristiğe aittir?	2. Performance Efficiency	alt->karakteristik
+<b>Resource utilization</b><br>Hangi karakteristiğe aittir?	2. Performance Efficiency	alt->karakteristik
+<b>Capacity</b><br>Hangi karakteristiğe aittir?	2. Performance Efficiency	alt->karakteristik
+<b>Co-existence</b><br>Hangi karakteristiğe aittir?	3. Compatibility	alt->karakteristik
+<b>Interoperability</b><br>Hangi karakteristiğe aittir?	3. Compatibility	alt->karakteristik
+<b>Appropriateness recognizability</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>Learnability</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>Operability</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>User error protection</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>User engagement</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>Inclusivity</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>User assistance</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>Self-descriptiveness</b><br>Hangi karakteristiğe aittir?	4. Interaction Capability	alt->karakteristik
+<b>Faultlessness</b><br>Hangi karakteristiğe aittir?	5. Reliability	alt->karakteristik
+<b>Availability</b><br>Hangi karakteristiğe aittir?	5. Reliability	alt->karakteristik
+<b>Fault tolerance</b><br>Hangi karakteristiğe aittir?	5. Reliability	alt->karakteristik
+<b>Recoverability</b><br>Hangi karakteristiğe aittir?	5. Reliability	alt->karakteristik
+<b>Confidentiality</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Integrity</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Non-repudiation</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Accountability</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Authenticity</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Resistance</b><br>Hangi karakteristiğe aittir?	6. Security	alt->karakteristik
+<b>Modularity</b><br>Hangi karakteristiğe aittir?	7. Maintainability	alt->karakteristik
+<b>Reusability</b><br>Hangi karakteristiğe aittir?	7. Maintainability	alt->karakteristik
+<b>Analysability</b><br>Hangi karakteristiğe aittir?	7. Maintainability	alt->karakteristik
+<b>Modifiability</b><br>Hangi karakteristiğe aittir?	7. Maintainability	alt->karakteristik
+<b>Testability</b><br>Hangi karakteristiğe aittir?	7. Maintainability	alt->karakteristik
+<b>Adaptability</b><br>Hangi karakteristiğe aittir?	8. Flexibility	alt->karakteristik
+<b>Scalability</b><br>Hangi karakteristiğe aittir?	8. Flexibility	alt->karakteristik
+<b>Installability</b><br>Hangi karakteristiğe aittir?	8. Flexibility	alt->karakteristik
+<b>Replaceability</b><br>Hangi karakteristiğe aittir?	8. Flexibility	alt->karakteristik
+<b>Operational constraint</b><br>Hangi karakteristiğe aittir?	9. Safety	alt->karakteristik
+<b>Risk identification</b><br>Hangi karakteristiğe aittir?	9. Safety	alt->karakteristik
+<b>Fail safe</b><br>Hangi karakteristiğe aittir?	9. Safety	alt->karakteristik
+<b>Hazard warning</b><br>Hangi karakteristiğe aittir?	9. Safety	alt->karakteristik
+<b>Safe integration</b><br>Hangi karakteristiğe aittir?	9. Safety	alt->karakteristik
+ISO 25010: <b>Functional completeness</b> ne anlama gelir?	İşlevler belirtilen bütün görevleri ve kullanıcı hedeflerini kapsıyor mu?<br><span style='color:#888'>(Functional Suitability)</span>	anlam
+ISO 25010: <b>Functional correctness</b> ne anlama gelir?	Doğru sonuçları gereken hassasiyetle üretiyor mu?<br><span style='color:#888'>(Functional Suitability)</span>	anlam
+ISO 25010: <b>Functional appropriateness</b> ne anlama gelir?	İşlevler görevlerin yerine getirilmesini kolaylaştırıyor mu?<br><span style='color:#888'>(Functional Suitability)</span>	anlam
+ISO 25010: <b>Time behaviour</b> ne anlama gelir?	Yanıt ve işlem süreleri, verim (throughput) gereksinimleri karşılıyor mu?<br><span style='color:#888'>(Performance Efficiency)</span>	anlam
+ISO 25010: <b>Resource utilization</b> ne anlama gelir?	Kullanılan kaynak (bellek, CPU) miktarı ve türü.<br><span style='color:#888'>(Performance Efficiency)</span>	anlam
+ISO 25010: <b>Capacity</b> ne anlama gelir?	Bir parametrenin üst sınırları (eşzamanlı kullanıcı, kayıt sayısı).<br><span style='color:#888'>(Performance Efficiency)</span>	anlam
+ISO 25010: <b>Co-existence</b> ne anlama gelir?	Ortak ortam ve kaynakları başka ürünlerle zarar vermeden paylaşabilme.<br><span style='color:#888'>(Compatibility)</span>	anlam
+ISO 25010: <b>Interoperability</b> ne anlama gelir?	İki veya daha fazla sistemin bilgi alışverişi yapıp bu bilgiyi kullanabilmesi (hoca: e-Devlet ile kimlik doğrulama).<br><span style='color:#888'>(Compatibility)</span>	anlam
+ISO 25010: <b>Appropriateness recognizability</b> ne anlama gelir?	Kullanıcı ürünün ihtiyacına uygun olup olmadığını anlayabiliyor mu?<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>Learnability</b> ne anlama gelir?	Kullanmayı öğrenme kolaylığı.<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>Operability</b> ne anlama gelir?	Kullanma ve kontrol etme kolaylığı.<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>User error protection</b> ne anlama gelir?	Kullanıcıyı hata yapmaktan koruma (hoca: numara kutusuna harf yazdırmamak; ilk düğmeye basılmadan ikinciyi pasif tutmak).<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>User engagement</b> ne anlama gelir?	Hoş, ilgi çekici, motive edici etkileşim (2011'de UI aesthetics).<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>Inclusivity</b> ne anlama gelir?	Farklı özellik ve yeteneklerdeki insanların kullanabilmesi (2011'de Accessibility).<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>User assistance</b> ne anlama gelir?	Kullanıcıya yardım ve destek (yardım menüsü, ipuçları).<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>Self-descriptiveness</b> ne anlama gelir?	Ürünün kendini açıklaması; ekranın ne yapılacağını kendiliğinden göstermesi.<br><span style='color:#888'>(Interaction Capability)</span>	anlam
+ISO 25010: <b>Faultlessness</b> ne anlama gelir?	Normal çalışmada hatasız işleme (2011'de Maturity).<br><span style='color:#888'>(Reliability)</span>	anlam
+ISO 25010: <b>Availability</b> ne anlama gelir?	Gerektiğinde çalışır ve erişilebilir olma.<br><span style='color:#888'>(Reliability)</span>	anlam
+ISO 25010: <b>Fault tolerance</b> ne anlama gelir?	Donanım/yazılım hatalarına rağmen amaçlandığı gibi çalışma.<br><span style='color:#888'>(Reliability)</span>	anlam
+ISO 25010: <b>Recoverability</b> ne anlama gelir?	Kesinti/arıza sonrası veriyi kurtarıp istenen duruma dönebilme.<br><span style='color:#888'>(Reliability)</span>	anlam
+ISO 25010: <b>Confidentiality</b> ne anlama gelir?	Veriye yalnızca yetkililerin erişmesi.<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Integrity</b> ne anlama gelir?	Program veya verinin yetkisiz erişim/değişikliğe karşı korunması.<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Non-repudiation</b> ne anlama gelir?	Eylem/olayların gerçekleştiğinin kanıtlanabilmesi, sonradan inkâr edilememesi.<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Accountability</b> ne anlama gelir?	Bir varlığın eylemlerinin tekil olarak o varlığa izlenebilmesi.<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Authenticity</b> ne anlama gelir?	Bir özne veya kaynağın kimliğinin iddia edildiği gibi olduğunun kanıtlanması.<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Resistance</b> ne anlama gelir?	Saldırılara karşı direnç (2023'te eklendi).<br><span style='color:#888'>(Security)</span>	anlam
+ISO 25010: <b>Modularity</b> ne anlama gelir?	Bir bileşendeki değişikliğin diğerlerini en az etkileyecek şekilde ayrık bileşenlerden oluşma.<br><span style='color:#888'>(Maintainability)</span>	anlam
+ISO 25010: <b>Reusability</b> ne anlama gelir?	Bir varlığın birden fazla sistemde kullanılabilmesi.<br><span style='color:#888'>(Maintainability)</span>	anlam
+ISO 25010: <b>Analysability</b> ne anlama gelir?	Değişikliğin etkisini değerlendirme, hata nedenini bulma, değişecek parçayı belirleme kolaylığı.<br><span style='color:#888'>(Maintainability)</span>	anlam
+ISO 25010: <b>Modifiability</b> ne anlama gelir?	Hata eklemeden, kaliteyi düşürmeden değiştirilebilme.<br><span style='color:#888'>(Maintainability)</span>	anlam
+ISO 25010: <b>Testability</b> ne anlama gelir?	Test kriterleri konup testlerin yapılabilmesi.<br><span style='color:#888'>(Maintainability)</span>	anlam
+ISO 25010: <b>Adaptability</b> ne anlama gelir?	Farklı veya gelişen donanım, yazılım, ortama uyarlanabilme.<br><span style='color:#888'>(Flexibility)</span>	anlam
+ISO 25010: <b>Scalability</b> ne anlama gelir?	Artan/azalan iş yüküne göre ölçeklenebilme (2023'te eklendi).<br><span style='color:#888'>(Flexibility)</span>	anlam
+ISO 25010: <b>Installability</b> ne anlama gelir?	Belirli ortamda başarıyla kurulabilme / kaldırılabilme.<br><span style='color:#888'>(Flexibility)</span>	anlam
+ISO 25010: <b>Replaceability</b> ne anlama gelir?	Aynı ortamda aynı amaçla başka bir ürünün yerine geçebilme.<br><span style='color:#888'>(Flexibility)</span>	anlam
+ISO 25010: <b>Operational constraint</b> ne anlama gelir?	Güvenli çalışma sınırları içinde kalma.<br><span style='color:#888'>(Safety)</span>	anlam
+ISO 25010: <b>Risk identification</b> ne anlama gelir?	Riskleri belirleyebilme.<br><span style='color:#888'>(Safety)</span>	anlam
+ISO 25010: <b>Fail safe</b> ne anlama gelir?	Arıza anında kendini güvenli moda alma.<br><span style='color:#888'>(Safety)</span>	anlam
+ISO 25010: <b>Hazard warning</b> ne anlama gelir?	Tehlike durumunda uyarı verme.<br><span style='color:#888'>(Safety)</span>	anlam
+ISO 25010: <b>Safe integration</b> ne anlama gelir?	Başka bileşenlerle güvenli bütünleşme.<br><span style='color:#888'>(Safety)</span>	anlam
+ISO 25010 karakteristiği <b>Functional Suitability</b> neyi ölçer?	Ürün belirtilmiş ve örtük ihtiyaçları karşılayan işlevleri sağlıyor mu?	anlam karakteristik
+ISO 25010 karakteristiği <b>Performance Efficiency</b> neyi ölçer?	Kullanılan kaynağa göre performans.	anlam karakteristik
+ISO 25010 karakteristiği <b>Compatibility</b> neyi ölçer?	Başka ürünlerle bilgi alışverişi yapabilme / aynı ortamı paylaşabilme.	anlam karakteristik
+ISO 25010 karakteristiği <b>Interaction Capability</b> neyi ölçer?	Belirli kullanıcıların ürünle etkileşebilme derecesi (2011'de Usability).	anlam karakteristik
+ISO 25010 karakteristiği <b>Reliability</b> neyi ölçer?	Belirtilen koşullarda, belirtilen süre boyunca belirtilen işlevleri yerine getirme.	anlam karakteristik
+ISO 25010 karakteristiği <b>Security</b> neyi ölçer?	Bilgi ve veriyi yetki düzeyine uygun şekilde koruma.	anlam karakteristik
+ISO 25010 karakteristiği <b>Maintainability</b> neyi ölçer?	İyileştirmek, düzeltmek, uyarlamak için etkin biçimde değiştirilebilme.	anlam karakteristik
+ISO 25010 karakteristiği <b>Flexibility</b> neyi ölçer?	Gereksinim, kullanım bağlamı ya da ortam değişikliklerine uyum (2011'de Portability).	anlam karakteristik
+ISO 25010 karakteristiği <b>Safety</b> neyi ölçer?	İnsan hayatı, sağlık, mülk ve çevre için tehlike yaratmama (2023'te yeni).	anlam karakteristik
+ISO/IEC 25010 (2023) <b>9 ana karakteristiğini</b> sırayla yaz.	<ol style='text-align:left'><li>Functional Suitability</li><li>Performance Efficiency</li><li>Compatibility</li><li>Interaction Capability</li><li>Reliability</li><li>Security</li><li>Maintainability</li><li>Flexibility</li><li>Safety</li></ol><div style='color:#888;font-size:0.85em'>💡 FP-CIR-SMFS: &quot;Fonksiyonel Performans, Cihazlar İletişimde Rahat; Sistem Mutlaka Fazla Sağlam&quot;. Toplam 40 alt karakteristik.</div>	liste cikmis hoca_sorar ezber
+2025–26 vizesinde ISO sorusu nasıl puanlandı? Kaç alt başlık yazmalısın?	18 puan: <b>ana başlık 1'er</b>, <b>alt başlık 0,5'er</b>. 9×1 + 18×0,5 = 18 → her ana başlıktan <b>en az 2</b> alt başlık. 2024–25'te tablonun tamamı istendi. Güvenli olan: hepsini yaz. Açıklama istenmiyor, maddeler yeterli.	cikmis sinav_taktigi
+Which one is NOT an ISO/IEC 25010 quality characteristic?<br>a) Reliability b) Portability c) Compatibility d) Comprehensibility e) Security	<b>d) Comprehensibility</b>. (Portability 2011 sürümünde vardı; 2023'te Flexibility oldu.)	cikmis test
+ISO 25000 serisinin adı (SQuaRE açılımı)? ISO 25010 neyi tanımlar?	<b>SQuaRE</b>: Systems and software Quality Requirements and Evaluation.<br>25010 → <b>kalite modelini</b>: ürün değerlendirilirken hangi kalite karakteristiklerinin dikkate alınacağını.	tanim
+Bir sistemin <b>kalitesi</b> nedir? (ISO 25010)	Sistemin, paydaşlarının <b>belirtilmiş ve örtük ihtiyaçlarını</b> karşılama derecesi.	tanim
+Hocanın vurgusu: ISO 25010 karakteristikleri bir yazılımın ne yaptığını mı söyler?	Hayır; <b>dokümanlarda nelerin tanımlanması gerektiğini</b> söyler. Ör. yanıt süresinin düşük/yüksek olması değil, <b>belgelerde tanımlanmış olması</b> önemlidir — tanımlıysa izlenebilir, ölçülebilir, iyileştirilebilir.	kavram
+2011 sürümünde kaç karakteristik / alt karakteristik vardı? 2023'te?	2011: <b>8</b> karakteristik, <b>31</b> alt.<br>2023: <b>9</b> karakteristik, <b>40</b> alt.	sayi karsilastirma
+2011 → 2023 <b>isim değişiklikleri</b> (karakteristik düzeyinde)?	<ul style='text-align:left'><li><b>Usability → Interaction Capability</b></li><li><b>Portability → Flexibility</b></li><li>Yeni karakteristik: <b>Safety</b></li></ul>	karsilastirma
+2011 → 2023 <b>alt karakteristik</b> değişiklikleri?	<ul style='text-align:left'><li>UI aesthetics → <b>User engagement</b></li><li>Accessibility → <b>Inclusivity</b></li><li>Yeni: <b>User assistance</b>, <b>Self-descriptiveness</b></li><li>Maturity → <b>Faultlessness</b></li><li>Security'ye yeni: <b>Resistance</b></li><li>Flexibility'ye yeni: <b>Scalability</b></li></ul>	karsilastirma
+ISO 25010'da en çok alt karakteristiği olan karakteristik hangisi? En az olan?	En çok: <b>Interaction Capability (8)</b>.<br>En az: <b>Compatibility (2)</b>.	sayi ezber
+Alt karakteristik sayılarını sırayla söyle (FS, PE, C, IC, R, Sec, M, F, Saf).	3 – 3 – 2 – 8 – 4 – 6 – 5 – 4 – 5 = <b>40</b>	sayi ezber
+Hem 2011 hem 2023'te aynı kalan, sınavda &quot;güvenli&quot; alt başlıklara örnek?	Time behaviour, Co-existence, Interoperability, Learnability, Operability, Availability, Fault tolerance, Confidentiality, Integrity, Modularity, Testability, Installability, Adaptability…	sinav_taktigi
+Security'nin alt başlıklarını hatırlama ipucu?	Confidentiality, Integrity (CIA'ya benzer) + Non-repudiation, Accountability, Authenticity, Resistance — &quot;inkâr edemezsin, hesabını verirsin, kim olduğunu kanıtlarsın, saldırıya dayanırsın&quot;.	ezber
+Reliability'nin alt başlıklarını hatırlama ipucu?	Hata olmasın (<b>faultlessness</b>), erişilebilsin (<b>availability</b>), hataya rağmen çalışsın (<b>fault tolerance</b>), sonra toparlansın (<b>recoverability</b>).	ezber
+Senaryo: Sistem, sunuculardan biri çökse bile çalışmaya devam ediyor. Hangi alt karakteristik?	<b>Fault tolerance</b> (Reliability).	senaryo
+Senaryo: Kullanıcı, kendisinin yaptığı para transferini inkâr edemiyor çünkü işlem kaydı ve imza var. Hangi alt karakteristik?	<b>Non-repudiation</b> (Security).	senaryo
+Senaryo: Uygulama, e-Devlet ile kimlik bilgisi alışverişi yapıp kullanabiliyor. Hangi alt karakteristik?	<b>Interoperability</b> (Compatibility).	senaryo
+Senaryo: Kampanya günü kullanıcı sayısı 10 katına çıkınca sistem ek sunucularla yükü karşılıyor. Hangi alt karakteristik?	<b>Scalability</b> (Flexibility).	senaryo
+Senaryo: Form, telefon alanına harf girilmesine izin vermiyor. Hangi alt karakteristik?	<b>User error protection</b> (Interaction Capability).	senaryo
+Senaryo: Görme engelli kullanıcılar ekran okuyucuyla uygulamayı kullanabiliyor. Hangi alt karakteristik?	<b>Inclusivity</b> (Interaction Capability; 2011'de Accessibility).	senaryo
+Senaryo: Bir modülde değişiklik yapınca diğer modüller etkilenmiyor. Hangi alt karakteristik?	<b>Modularity</b> (Maintainability).	senaryo
+Senaryo: Elektrik kesintisinden sonra sistem 2 dakikada verileriyle birlikte eski durumuna dönüyor. Hangi alt karakteristik?	<b>Recoverability</b> (Reliability).	senaryo
+Senaryo: Tıbbi cihaz yazılımı arıza algılayınca dozu kesip güvenli moda geçiyor. Hangi alt karakteristik?	<b>Fail safe</b> (Safety).	senaryo
+Senaryo: Hasta kayıtlarını yalnızca yetkili doktorlar görebiliyor. Hangi alt karakteristik?	<b>Confidentiality</b> (Security).	senaryo

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flashcard'lar | OOP Vize</title>
+<script>var t='dark',l='en';try{t=localStorage.getItem('oop:theme')||'dark';l=localStorage.getItem('oop:lang')||'en';}catch(e){}document.documentElement.dataset.theme=t;document.documentElement.dataset.lang=l;try{if(localStorage.getItem('oop:toc')==='hidden')document.documentElement.classList.add('toc-hidden');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=b61c9efa">
+<link rel="stylesheet" href="assets/kartlar.css?v=375d295f">
+</head>
+<body class="fc" data-page="kartlar" style="--accent:#A78BFA">
+<header class="topbar">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span>OOP Vize</a>
+  <a class="crumb fc-crumb" href="#">Flashcard'lar</a>
+  <div class="tb-actions">
+    <button class="tb-btn sbtn" id="searchBtn" type="button"><span class="ic ic-search"></span><span class="lbl">Ara</span><kbd>Ctrl K</kbd></button>
+    <button class="tb-btn" id="themeBtn" type="button" aria-label="Tema değiştir"><span class="ic ic-theme"></span></button>
+  </div>
+</header>
+
+<main class="fc-main" id="fc" aria-live="polite">
+  <noscript><p class="fc-empty">Flashcard'lar için JavaScript gerekli.</p></noscript>
+</main>
+
+<div class="search" id="search" hidden>
+  <div class="search-panel" role="dialog" aria-label="Arama">
+    <input type="search" id="searchIn" placeholder="Konu ya da terim ara (ör. stamp coupling, inception, SPMP)" autocomplete="off">
+    <ol id="searchOut"></ol>
+    <p class="search-hint">Yukarı/aşağı ok ile seç, Enter ile git, Esc ile kapat.</p>
+  </div>
+</div>
+<script src="assets/search-index.js?v=814b0bdf"></script>
+<script src="assets/app.js?v=c35fbe9f"></script>
+<script src="assets/kartlar-data.js?v=d67eb0d1"></script>
+<script src="assets/kartlar.js?v=470ab8f9"></script>
+</body>
+</html>
